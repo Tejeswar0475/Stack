@@ -1,5 +1,6 @@
 package Stack;
 
+
 public class MyLinkedList {
 	
 	public INode head;
@@ -49,10 +50,23 @@ public class MyLinkedList {
 		newNode.setNext(tempNode);
 	}
 	
-	public void pop()
+	public INode pop()
 	{
 		INode tempNode =this.head;
 		this.head=head.getNext();
+		return tempNode;
+	}
+	
+	public INode popLast()
+	{
+		INode tempNode=this.head;
+		while(!tempNode.getNext().equals(tail))
+		{
+			tempNode=tempNode.getNext();
+		}
+		this.tail=tempNode;
+		tempNode=tempNode.getNext();
+		return tempNode;
 	}
 
 	public void printMyNodes()
@@ -68,7 +82,4 @@ public class MyLinkedList {
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
-	
-
-
 }

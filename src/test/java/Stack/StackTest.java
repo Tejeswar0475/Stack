@@ -16,11 +16,23 @@ public class StackTest {
 		stack.push(firstNode);
 		stack.push(secondNode);
 		stack.push(thirdNode);
-		stack.printStack();
 		INode peak=stack.peak();
-		assertEquals(thirdNode,peak);
-		
+		assertEquals(thirdNode,peak);	
 	}
-
 	
+	
+	@Test
+	public void AddingOfThreeNumbersPopTest()
+	{
+		MyNode<Integer> firstNode=new MyNode<>(70);
+		MyNode<Integer> secondNode=new MyNode<>(30);
+		MyNode<Integer> thirdNode=new MyNode<>(56);
+		Stack stack=new Stack();
+		stack.push(firstNode);
+		stack.push(secondNode);
+		stack.push(thirdNode);		
+		INode pop=stack.pop();
+		stack.printStack();
+		assertEquals(thirdNode,pop);
+	}	
 }
